@@ -1,18 +1,17 @@
 package dev.anuradha.omspaymentworker.dto;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
-import java.math.BigDecimal;
 import java.util.UUID;
 
 @Setter
 @Getter
-public class OrderCreatedEvent {
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class PaymentFailedEvent {
 
-    private UUID userId;
     private UUID orderId;
     private UUID productId;
     private Integer quantity;
-    private BigDecimal amount;
 }

@@ -7,6 +7,9 @@ spring:
     username: postgres
     password: admin
 
+  application:
+    name: oms-payment-worker
+
   jpa:
     hibernate:
       ddl-auto: none
@@ -27,3 +30,4 @@ spring:
 
 sqs:
   order-created-queue: order-created-queue
+  payment-failed-queue: payment-failed-queue
