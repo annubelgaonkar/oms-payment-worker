@@ -3,7 +3,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5436/oms_order_db
+    url: jdbc:postgresql://postgres-order:5432/oms_order_db
     username: postgres
     password: admin
 
@@ -18,15 +18,17 @@ spring:
         jdbc:
           time_zone: Asia/Kolkata
 
-  cloud:
-    aws:
-      region:
-        static: us-east-1
-      credentials:
-        access-key-id: test
-        secret-access-key: test
-      sqs:
-        endpoint: http://localhost:4566
+cloud:
+  aws:
+    region:
+      static: us-east-1
+    credentials:
+      access-key-id: test
+      secret-access-key: test
+    sqs:
+      endpoint: http://localstack:4566
+      listener:
+        auto-create: true
 
 sqs:
   order-created-queue: order-created-queue
